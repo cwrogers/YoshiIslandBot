@@ -6,6 +6,7 @@ import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.message.MessageCreateEvent;
 import discord4j.core.object.entity.Message;
 import discord4j.core.object.entity.User;
+import org.bukkit.command.Command;
 
 import java.util.Arrays;
 
@@ -18,7 +19,7 @@ public class DiscordBot {
         this.client = DiscordClient.create(Secret.TOKEN);
         this.commandIdentifier = '!';
         GatewayDiscordClient gateway = this.client.login().block();
-
+        CommandRegistry.initCommands();
         assert gateway != null;
         gateway.on(MessageCreateEvent.class).subscribe(this::messageReceived);
         gateway.onDisconnect().block();

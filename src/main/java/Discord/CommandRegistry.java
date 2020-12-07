@@ -27,7 +27,7 @@ public class CommandRegistry {
     }
 
 
-    private static void initCommands() {
+    public static void initCommands() {
         // Add commands here.
         // commands.add(new Command());
         commands.add(new MinecraftIP());
