@@ -1,1 +1,1 @@
-YoshiIslandBot
+Yoshi
