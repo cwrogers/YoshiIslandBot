@@ -1,5 +1,7 @@
 package Discord.Commands;
 
+import org.javacord.api.entity.message.Message;
+
 public abstract class AbstractCommand implements ICommand {
     String identifier;
     String description;
@@ -22,4 +24,8 @@ public abstract class AbstractCommand implements ICommand {
         return this.params;
     }
 
+    @Override
+    public void run(Message s, String[] args) {
+        this.run(s);
+    }
 }

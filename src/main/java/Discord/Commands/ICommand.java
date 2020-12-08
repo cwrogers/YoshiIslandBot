@@ -1,6 +1,7 @@
 package Discord.Commands;
 
-import discord4j.core.object.entity.Message;
+
+import org.javacord.api.entity.message.Message;
 
 public interface ICommand {
 

@@ -1,7 +1,7 @@
 package Discord.Commands;
 
 import Discord.CommandRegistry;
-import discord4j.core.object.entity.Message;
+import org.javacord.api.entity.message.Message;
 
 public class Help extends AbstractCommand{
 
@@ -17,7 +17,7 @@ public class Help extends AbstractCommand{
         for(ICommand command : CommandRegistry.commands) {
             res.append(String.format("%s - %s\n", command.getIdentifier(), command.getDescription()));
         }
-        s.getChannel().block().createMessage(res.toString()).block();
+        s.getChannel().sendMessage(res.toString());
     }
 
     public void run(Message s, String[] args) {
