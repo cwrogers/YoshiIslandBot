@@ -6,7 +6,6 @@ public abstract class AbstractCommand implements ICommand {
     String identifier;
     String description;
     String help;
-    String[] params;
 
     public String getIdentifier() {
         return this.identifier;
@@ -20,9 +19,6 @@ public abstract class AbstractCommand implements ICommand {
         return this.help;
     }
 
-    public String[] getParams() {
-        return this.params;
-    }
 
     @Override
     public void run(Message s, String[] args) {

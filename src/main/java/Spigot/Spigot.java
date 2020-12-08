@@ -1,11 +1,9 @@
 package Spigot;
 
 import Discord.DiscordBot;
-import Discord.Secret;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Dictionary;
 
 public class Spigot extends JavaPlugin {
 

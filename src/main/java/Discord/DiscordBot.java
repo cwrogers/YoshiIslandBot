@@ -55,8 +55,10 @@ public class DiscordBot  {
         }
     }
 
-    private void runCommand(Message message, String command, String[] params) {
-
+    private void runCommand(Message message, String command, String[] args) {
+        ICommand com = CommandRegistry.getByIdentifier(command);
+        if(com != null)
+            com.run(message, args);
     }
 
     public void setStatus(String str) {

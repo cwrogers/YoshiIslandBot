@@ -3,6 +3,7 @@ package Discord;
 import Discord.Commands.Help;
 import Discord.Commands.ICommand;
 import Discord.Commands.MinecraftIP;
+import Discord.Commands.WhoIsOnline;
 
 import java.util.ArrayList;
 
@@ -32,6 +33,7 @@ public class CommandRegistry {
         // commands.add(new Command());
         commands.add(new MinecraftIP());
         commands.add(new Help());
+        commands.add(new WhoIsOnline());
     }
 
 }

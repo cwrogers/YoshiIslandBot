@@ -9,7 +9,6 @@ public class MinecraftIP extends AbstractCommand {
         this.identifier = "mcip";
         this.description = "Gives the minecraft server's IP";
         this.help = "mcip";
-        this.params = null;
     }
 
     public void run(Message s) {

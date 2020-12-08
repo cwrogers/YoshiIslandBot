@@ -13,7 +13,6 @@ public interface ICommand {
     String getIdentifier();
     String getDescription();
     String getHelp();
-    String[] getParams();
 
 
 }
