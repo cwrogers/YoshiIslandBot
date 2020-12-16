@@ -11,7 +11,7 @@ import java.util.Collection;
 public class WhoIsOnline extends AbstractCommand {
 
     public WhoIsOnline() {
-        this.identifier = "whosonline";
+        this.identifier = "who";
         this.description = "returns a list of players currently on the server";
         this.help = this.identifier;
     }
@@ -26,6 +26,6 @@ public class WhoIsOnline extends AbstractCommand {
          for(Player p : DiscordBot.spigotPlugin.getServer().getOnlinePlayers()) {
              msg.append(p.getDisplayName()).append("\n");
          }
-         msg.append("test```");
+         s.getChannel().sendMessage(msg.toString());
     }
 }

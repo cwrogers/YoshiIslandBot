@@ -16,8 +16,6 @@ public class CommandRegistry {
         int index = -1;
         boolean found = false;
         for(int i = 0; i < commands.size(); i++) {
-            System.out.println("Checking command: ");
-            System.out.println(commands.get(i));
             if(commands.get(i).getIdentifier().equals(id)) {
                 found = true;
                 index = i;

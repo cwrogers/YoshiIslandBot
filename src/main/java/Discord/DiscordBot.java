@@ -14,9 +14,11 @@ import java.util.Arrays;
 
 public class DiscordBot  {
 
-    public static char commandIdentifier;
     public static JavaPlugin spigotPlugin;
-    private DiscordApi discord;
+
+
+    public static char commandIdentifier;
+    private final DiscordApi discord;
 
     public DiscordBot(JavaPlugin plugin) {
         spigotPlugin = plugin;
@@ -31,7 +33,6 @@ public class DiscordBot  {
                 if(e.getMessage().getContent().charAt(0) == DiscordBot.commandIdentifier) {
                     String[] delimitedMsg = e.getMessage().getContent().split(" ");
                     String command = delimitedMsg[0].substring(1);
-                    System.out.println(command);
 
                     if(delimitedMsg.length > 1) {
                         runCommand(e.getMessage(), command, Arrays.copyOfRange(delimitedMsg, 1, delimitedMsg.length));
@@ -64,6 +65,8 @@ public class DiscordBot  {
     public void setStatus(String str) {
         discord.updateActivity(str);
     }
+
+    public DiscordApi getBot() { return discord; }
 
 
 }
