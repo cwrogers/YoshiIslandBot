@@ -4,6 +4,8 @@ import Discord.Commands.Help;
 import Discord.Commands.ICommand;
 import Discord.Commands.MinecraftIP;
 import Discord.Commands.WhoIsOnline;
+import Discord.Commands.Version;
+
 
 import java.util.ArrayList;
 
@@ -32,6 +34,7 @@ public class CommandRegistry {
         commands.add(new MinecraftIP());
         commands.add(new Help());
         commands.add(new WhoIsOnline());
+        commands.add(new Version());
     }
 
 }

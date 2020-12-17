@@ -4,9 +4,6 @@ import Discord.DiscordBot;
 import org.bukkit.entity.Player;
 import org.javacord.api.entity.message.Message;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 
 public class WhoIsOnline extends AbstractCommand {
 
@@ -24,8 +21,8 @@ public class WhoIsOnline extends AbstractCommand {
         }
          StringBuilder msg = new StringBuilder("The players currently on the server are:```\n");
          for(Player p : DiscordBot.spigotPlugin.getServer().getOnlinePlayers()) {
-             msg.append(p.getDisplayName()).append("\n");
+             msg.append(p.getDisplayName(), 0, p.getDisplayName().length() - 2).append("\n");
          }
-         s.getChannel().sendMessage(msg.toString());
+         s.getChannel().sendMessage(msg.append("```").toString());
     }
 }

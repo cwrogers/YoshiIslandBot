@@ -12,18 +12,14 @@ public class PlayerCount implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
-        updatePlayCount();
+        int playerCount = Bukkit.getServer().getOnlinePlayers().size();
+        Spigot.statusUpdater.setPlayerCount(playerCount);
     }
 
 
     @EventHandler
     public void onDisconnect(PlayerQuitEvent e) {
-        updatePlayCount();
+        int playerCount = Bukkit.getServer().getOnlinePlayers().size() - 1;
+        Spigot.statusUpdater.setPlayerCount(playerCount);
     }
-
-    private void updatePlayCount() {
-        int playerCount = Bukkit.getServer().getOnlinePlayers().size();
-        Spigot.discordBot.setStatus(String.format("%s of %s players online.", playerCount, Bukkit.getServer().getMaxPlayers()));
-    }
-
 }
